@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import bg from "../assets/imagens/bg.png"; // Certifique-se de que o caminho e nome estão corretos
+import axios from "axios";
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -13,15 +14,25 @@ const ContactForm = () => {
       ...formData,
       [e.target.name]: e.target.value
     });
-  };
-
-  const handleSubmit = (e) => {
+  }
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(`Mensagem enviada: ${formData.name}, ${formData.email}`);
-    console.log(`${formData.message}`);
-    alert('Mensagem enviada com sucesso');
-    setFormData({ name: '', email: '', message: '' });
-  };
+    try {
+        const response = await axios.post("http://localhost:5000/api/contacts", {
+            name: formData.name,
+            email: formData.email,
+            message: formData.message,
+        });
+        alert("menssagem cadastrada com sucesso!!" + `nome: ${formData.name} email: ${formData.email}`)
+        window.location.href = "/"
+    } catch (error) {
+        if (error.response) {
+            alert("Erro ao cadastrar usuário")
+        } else {
+            alert("erro ao conectar ao servidor")
+        }
+    }
+};
 
   return (
     <div
