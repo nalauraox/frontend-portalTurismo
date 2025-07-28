@@ -9,7 +9,7 @@ const Footer = () => {
         <footer className="w-full bg-gradient-to-r from-red-200 to-red-600 text-black py-2 px-2 shadow-lg mt-auto">
             <div className="w-full mx-auto flex flex-col md:flex-row justify-between items-center">
                 <div className="text-center md:text-left mb-4 md:mb-0">
-                    <p className="text-sm text-black"> Nova serra verde. Todos os direitos reservados</p>
+                    <p className="text-sm text-black"> Pousada urbana. Todos os direitos reservados</p>
                 </div>
 
                 <div className="flex space-x-6">

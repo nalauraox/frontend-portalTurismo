@@ -15,7 +15,7 @@ const Home = () => {
       >
         <Hero 
         img={bg}
-          titulo="Nova Serra Verde"
+          titulo="Pousada urbana"
           paragrafo="Conheça nossas atrações"
           rota="#"
           botao="Saiba mais"
